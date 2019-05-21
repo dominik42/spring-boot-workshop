@@ -15,8 +15,12 @@
 
 package de.todo42.workshop.book;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.NonNull;
@@ -26,6 +30,7 @@ import lombok.RequiredArgsConstructor;
  * @author Dominik
  *
  */
+
 @RestController(value = BookRestController.REQUEST_URL)
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class BookRestController {
@@ -37,7 +42,18 @@ public class BookRestController {
 	
 	
 	@GetMapping
-	public Book getSingleBook() {
-		return bookService.loadSingleBook();
+	public Collection<Book> getAllBooks() {
+		return bookService.loadAllBooks();
 	}
+
+	@GetMapping(path = REQUEST_URL + "/{isbn}")
+	public Book getSingleBook(@PathVariable(name = "isbn", required = true) String isbn) {
+		return bookService.loadSingleBook(isbn);
+	}
+
+	@GetMapping(path = REQUEST_URL, params = "isbn")
+	public Book getSingleBook2(@RequestParam(name = "isbn", required = true) String isbn) {
+		return bookService.loadSingleBook(isbn);
+	}
+	
 }
