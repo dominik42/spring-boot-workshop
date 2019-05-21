@@ -15,25 +15,29 @@
 
 package de.todo42.workshop.book;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 /**
  * @author Dominik
  *
  */
 @RestController(value = BookRestController.REQUEST_URL)
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class BookRestController {
 
 	public static final String REQUEST_URL = "/book";
 	
+	@NonNull
+	private BookService bookService;
+	
+	
 	@GetMapping
 	public Book getSingleBook() {
-		Book book = Book.builder()
-				.author("Michael Simons")
-				.title("Spring Boot 2")
-				.isbn("978-3-86490-525-4")
-				.build();
-		return book;
+		return bookService.loadSingleBook();
 	}
 }
