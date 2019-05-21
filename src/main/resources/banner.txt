@@ -8,4 +8,5 @@
         |_|            |___/                                                                  |_|    
         
 App Version: ${application.version}
-Spring Boot: ${spring-boot.version}        
+Spring Boot: ${spring-boot.version}    
+    
