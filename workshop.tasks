@@ -1,0 +1,25 @@
+ to-do:
+   ☐ alle Mac Adapter mitnehmen
+   ☐ Folien der Agenda (S.7 ff) aktualisieren
+
+
+Themen:
+  ☐ shortcuts der IDE (re-run Tests) 
+  ✔ devtools @done (19-05-21 10:28)
+  ✔ logging @done (19-05-21 10:28)
+  ✔ lombok @done (19-05-21 10:28)
+  ✔ profiles @done (19-05-21 16:07)
+  ☐ configuration processor (für config parameter)
+  ☐ validators in controller
+  ☐ custom enum converter
+  ✔ customize jackson @done (19-05-21 16:08)
+  ☐ REST Docs
+  ☐ liquibase
+  ☐ custom jackson serializer
+  ☐ AdminServer
+  ☐ Docker
+  
+
+
+
+  ☐ NiceToHave (N2H): farbiges logging
