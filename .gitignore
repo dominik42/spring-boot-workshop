@@ -28,3 +28,4 @@ HELP.md
 ### VS Code ###
 .vscode/
 /workshop.log
+/.DS_Store
