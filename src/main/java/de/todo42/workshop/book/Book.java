@@ -15,8 +15,12 @@
 
 package de.todo42.workshop.book;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author Dominik
@@ -24,9 +28,14 @@ import lombok.Data;
  */
 @Data
 @Builder
+@NoArgsConstructor // needed by jackson
+@AllArgsConstructor // needed by @Builder if @NoArgsConstructor given
 public class Book {
 
 	private String title;
 	private String author;
 	private String isbn;
+	
+	@JsonBackReference
+	private Publisher publisher;
 }
