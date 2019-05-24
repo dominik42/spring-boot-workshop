@@ -50,5 +50,10 @@ public class BookService {
 		return bookMap.get(isbn);
 	}
 
+    public Book save(Book book) {
+        bookMap.put(book.getIsbn(), book);
+        return book;
+    }
+
 	
 }

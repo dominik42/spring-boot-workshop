@@ -15,6 +15,8 @@
 
 package de.todo42.workshop.book;
 
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import lombok.AllArgsConstructor;
@@ -32,9 +34,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor // needed by @Builder if @NoArgsConstructor given
 public class Book {
 
+    @NotNull
 	private String title;
-	private String author;
-	private String isbn;
+	
+    private String author;
+	
+    //@Size(min = 13, max = 13)
+    private String isbn;
 	
 	@JsonBackReference
 	private Publisher publisher;

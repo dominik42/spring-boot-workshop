@@ -1,5 +1,7 @@
 package de.todo42.workshop.book;
 
+import java.net.URLEncoder;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,9 @@ public class PublisherTest {
         Publisher publisher = ValueStore.publisher();
         String json = mapper.writeValueAsString(publisher);
         System.out.println(json);
+        System.out.println(URLEncoder.encode("Content-Type: application/json"));
     }
+    
+    
     
 }
